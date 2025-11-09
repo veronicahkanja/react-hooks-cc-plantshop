@@ -22,7 +22,17 @@ function NewPlantForm({ onAddPlant}) {
       image: formData.image,
       price: formData.price,
     };
-    
+
+    fetch("http://localhost:6001/plants", {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/JSON",
+      },
+      body: JSON.stringify(newPlant),
+    })
+      .then((res) => res.json())
+      .then((data) => onAddPlant(data));
+  }
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
