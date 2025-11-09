@@ -5,7 +5,14 @@ function NewPlantForm({ onAddPlant}) {
     name: "",
     image: "",
     price: "",
-  })
+  });
+
+  function handleChange(e) {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
