@@ -13,6 +13,16 @@ function NewPlantForm({ onAddPlant}) {
       [e.target.name]: e.target.value,
     });
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const newPlant = {
+      name: formData.name,
+      image: formData.image,
+      price: formData.price,
+    };
+    
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
